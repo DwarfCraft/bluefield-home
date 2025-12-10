@@ -1,21 +1,20 @@
 'use client';
 
-import { useSession, signIn, signOut } from 'next-auth/react';
+import { useSession, signIn } from 'next-auth/react';
 import { Button } from '@mui/material';
+import Link from 'next/link';
 
 export default function Login() {
   const { data: session } = useSession();
 
   if (session) {
     return (
-      <>
-        <Button color="inherit" onClick={() => signOut()}>Sign out</Button>
-      </>
+        <Button color="inherit" component={Link} href="/profile">
+          Profile
+        </Button>
     );
   }
   return (
-    <>
-      <Button color="inherit" onClick={() => signIn('google')}>Sign in with Google</Button>
-    </>
+      <Button color="inherit" onClick={() => signIn()}>Sign in</Button>
   );
 }

@@ -1,5 +1,4 @@
 'use client';
-
 import * as React from 'react';
 import Link from 'next/link';
 import AppBar from '@mui/material/AppBar';
@@ -13,35 +12,30 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { useTheme as useMuiTheme } from '@mui/material/styles';
 import { useTheme } from '../ThemeRegistry';
 import Login from './Login';
-
 export default function Header() {
   const muiTheme = useMuiTheme();
   const { toggleTheme } = useTheme();
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" component="div">
-            <Link href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-              Bluefield Neighborhood
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Link href="/" passHref>
+              <Button sx={{ color: 'white' }}>Bluefield</Button>
             </Link>
           </Typography>
-          <Box sx={{ ml: 2 }}>
-            <Link href="/forum" passHref>
-              <Button color="inherit">Forum</Button>
-            </Link>
-            <Link href="/events" passHref>
-              <Button color="inherit">Events</Button>
-            </Link>
-            <Link href="/directory" passHref>
-              <Button color="inherit">Directory</Button>
-            </Link>
-            <Link href="/safety" passHref>
-              <Button color="inherit">Safety</Button>
-            </Link>
-          </Box>
-          <Box sx={{ flexGrow: 1 }} />
+          <Button color="inherit" component={Link} href="/forum">
+            Forum
+          </Button>
+          <Button color="inherit" component={Link} href="/events">
+            Events
+          </Button>
+          <Button color="inherit" component={Link} href="/directory">
+            Directory
+          </Button>
+          <Button color="inherit" component={Link} href="/safety">
+            Safety
+          </Button>
           <IconButton sx={{ ml: 1 }} onClick={toggleTheme} color="inherit">
             {muiTheme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
           </IconButton>
