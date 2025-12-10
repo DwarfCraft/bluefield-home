@@ -1,3 +1,13 @@
+import PostFeed from '../components/PostFeed';
+import { Container, Typography } from '@mui/material';
+
 export default function ForumPage() {
-  return <h1>Forum</h1>;
+  return (
+    <Container maxWidth="md" sx={{ my: 4 }}>
+      <Typography variant="h4" component="h1" gutterBottom>
+        Forum
+      </Typography>
+      <PostFeed />
+    </Container>
+  );
 }

@@ -1,4 +1,3 @@
-import PostFeed from './components/PostFeed';
 import { Container, Typography } from '@mui/material';
 
 export default function Home() {
@@ -37,7 +36,6 @@ export default function Home() {
           </li>
         </ul>
       </Container>
-      <PostFeed />
     </main>
   );
 }
