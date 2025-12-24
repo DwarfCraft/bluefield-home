@@ -24,17 +24,20 @@ export default function Header() {
               <Button sx={{ color: 'white' }}>Bluefield</Button>
             </Link>
           </Typography>
-          <Button color="inherit" component={Link} href="/forum">
-            Forum
+          <Button color="inherit" component={Link} href="/dashboard">
+            Dashboard
+          </Button>
+          <Button color="inherit" component={Link} href="/marketplace">
+            Marketplace
+          </Button>
+          <Button color="inherit" component={Link} href="/pets">
+            Pets
           </Button>
           <Button color="inherit" component={Link} href="/events">
             Events
           </Button>
-          <Button color="inherit" component={Link} href="/directory">
-            Directory
-          </Button>
-          <Button color="inherit" component={Link} href="/safety">
-            Safety
+          <Button color="inherit" component={Link} href="/forum">
+            Forum
           </Button>
           <IconButton sx={{ ml: 1 }} onClick={toggleTheme} color="inherit">
             {muiTheme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}

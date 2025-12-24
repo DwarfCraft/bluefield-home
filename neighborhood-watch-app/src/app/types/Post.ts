@@ -1,9 +1,11 @@
-export type Post = {
+export interface Post {
   id: string;
   text: string;
-  timestamp: any;
+  timestamp: any; // Firestore Timestamp
   author: {
     name: string;
     image: string;
-  }
-};
+  };
+  image?: string;
+  type?: 'notice' | 'alert' | 'general';
+}
